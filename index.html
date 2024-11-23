@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizaciones del Dólar</title>
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+    <style>
+        body {
+          background-color: #f8f9fa; /* Fondo gris claro */
+        }
+        h1, .card-title {
+          color: #1b5e20; /* Verde Bootstrap */
+        }
+        .card {
+          background-color: #b2c9da; /* Fondo celeste muy claro */
+          border: none; /* Sin bordes */
+        }
+        .cotizacion-tipo {
+          font-size: 1.1em;
+          color: #6c757d; /* Gris Bootstrap */
+        }
+        .cotizacion-valor {
+          font-size: 1.3em;
+          font-weight: bold;
+          color: #1b5e20; /* Verde oscuro */
+        }
+        .cotizacion-boton {
+          width: 100%;
+          border: none;
+          background-color: transparent;
+          cursor: pointer; /* Hacer clic posible */
+          text-align: center;
+        }
+        .cotizacion-boton:hover {
+          background-color: #e9f5fc; /* Azul claro */
+          border-radius: 5px; /* Opcional: bordes redondeados */
+        }
+        </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="text-center py-4">
+    <h1>Cotizaciones del Dólar</h1>
+    <h2 class="h5 text-muted">Compra y Venta de Dólares en Argentina</h2>
+    <hr class="my-3">
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-4">
+    <div class="row justify-content-center" id="cotizaciones">
+      <!-- Las cards serán generadas dinámicamente -->
+    </div>
+  </main>
+
+  <!-- Bootstrap JS Bundle (con Popper.js) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Archivo JS -->
+  <script src="index.js"></script>
+</body>
+</html>
