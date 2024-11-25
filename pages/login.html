@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-vt.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MT Streetwear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-dark bg-gradient d-flex justify-content-center align-items-center vh-100">
+
+    <form id="login" method="POST">
+        <div class="contenedor bg-dark p-4 rounded-5 text-light shadow" style="width: 25rem">
+
+            <div class="d-flex justify-content-center">
+                <img src="/assets/MonogramChicM-T.webp" alt="login-icon" style="height: 10rem" />
+            </div>
+
+            <div class="text-center fs-2 fw-bold text-light" style="--bs-text-opacity: .8;">Ingreso</div>
+
+            <div class="input-group mt-4 ">
+                <div class="input-group-text bg-warning">
+                    <img src="/assets/usario-icono.svg" alt="username-icon" style="height: 1rem" />
+                </div>
+                <input id="username" class="form-control bg-light" type="text" placeholder="Usuario" required />
+            </div>
+            
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-warning">
+                    <img src="/assets/password.svg" alt="password-icon" style="height: 1rem" />
+                </div>
+                <input id="password" class="form-control bg-light" type="password" placeholder="Contraseña" required />
+            </div>
+
+            <div class="d-flex justify-content-around mt-2">
+                <div class="d-flex align-items-center gap-1">
+                    <input class="form-check-input" type="checkbox" />
+                    <div class="pt-1" style="font-size: 0.9rem">Recuerdame</div>
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" value="Ingresar" class="btn btn-outline-warning w-100 mt-3 fw-semibold shadow-sm">
+            </div>
+
+
+            <div class="d-flex gap-1 justify-content-center mt-2">
+                <div>Aún no tienes una cuenta?</div>
+                <a href="registro.html" class="text-decoration-none text-warning fw-semibold">Registrate</a>
+            </div>
+
+            <div class="col-12 p-3 text-center">
+                <label class="text-secondary" id="lblError"></label>
+            </div>
+    </form>
+    </div>
+
+    <script src="login.js" defer></script>
+    <script type="module" src="/components/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

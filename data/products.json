@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "imagen": "https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwee40f5a2/products/NI_DH4776-100/NI_DH4776-100-1.JPG",
+        "titulo": "Zapatillas Nike Air Max Plus",
+        "precio": 93599.00,
+        "descripcion": "Diseño deportivo con materiales de alta calidad, combinando rendimiento y estilo.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 2,
+        "imagen": "https://acdn.mitiendanube.com/stores/001/666/292/products/0221-e085b968fc586f7c6016400409219064-1024-1024.webp",
+        "titulo": "Air Max TN PLUS Black",
+        "precio": 146300.00,
+        "descripcion": "Con una estructura robusta, estas zapatillas ofrecen comodidad y soporte duradero.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 3,
+        "imagen": "https://newsport.vtexassets.com/arquivos/ids/19349130-800-auto?v=638609863306730000&width=800&height=auto&aspect=true",
+        "titulo": "Zapatillas Nike Air Max Plus Drift",
+        "precio": 349999.00,
+        "descripcion": "Modelo sofisticado con un diseño único y tecnología de amortiguación avanzada para máximo confort.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 4,
+        "imagen": "https://essential.vtexassets.com/arquivos/ids/1510621-800-auto?v=638568978192470000&width=800&height=auto&aspect=true",
+        "titulo": "Zapatillas Nike Air Max DN",
+        "precio": 255640.00,
+        "descripcion": "Combinación de estilo deportivo y tecnología de vanguardia para un rendimiento excepcional.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 5,
+        "imagen": "https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/D/V/DV1232-100_0.jpg",
+        "titulo": "Zapatillas Nike Air Max TW SE",
+        "precio": 235000.00,
+        "descripcion": "Un modelo de alta gama que combina confort y estilo urbano.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 6,
+        "imagen": "https://woker.vtexassets.com/arquivos/ids/194815-800-800?v=637516849418430000&width=800&height=800&aspect=true",
+        "titulo": "Zapatillas Adidas Superstar",
+        "precio": 204000.00,
+        "descripcion": "Un diseño atemporal, cómodo y con un toque clásico de la marca Adidas.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 7,
+        "imagen": "https://chelseaio.vtexassets.com/arquivos/ids/505828-800-auto?v=638526988661930000&width=800&height=auto&aspect=true",
+        "titulo": "Zapatillas adidas Originals Forum Low",
+        "precio": 204500.00,
+        "descripcion": "Diseño minimalista con un ajuste perfecto, en su version low.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 8,
+        "imagen": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/70dab482a3424d4ea8a53c31cfa35a5d_9366/Zapatillas_adidas_VL_Court_3.0_Negro_IH4789_HM1.jpg",
+        "titulo": "Zapatillas adidas VL Court 3.0",
+        "precio": 150000.00,
+        "descripcion": "Comodidad y estilo en un solo modelo, con una suela flexible y diseño moderno.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 9,
+        "imagen": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4a46e180c40643c8b436af9c017a4615_9366/Zapatillas_Samba_adidas_Originals_Verde_ID2054_01_standard.jpg",
+        "titulo": "Zapatillas Samba adidas Originals",
+        "precio": 155000.00,
+        "descripcion": "Famosas por su confort, ofrecen un diseño sencillo y versátil.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 10,
+        "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/st6athnao8lxze72ddv0q8y5mcc0/77e513bcd3762f47919c96f85e400038a39acdbb0d268f51c1fd98fe5327bd96",
+        "titulo": "Zapatillas adidas Park Street",
+        "precio": 261130.00,
+        "descripcion": "Combinación de elegancia y confort con una suela resistente y diseño sencillo.",
+        "categoria": "Zapatillas"
+    },
+    {
+        "id": 11,
+        "imagen": "https://www.tradeinn.com/f/13798/137982785/nike-gorra-dri-fit-pro-trail.webp",
+        "titulo": "Gorra Nike Dri Fit Pro Trail",
+        "precio": 36500.00,
+        "descripcion": "Gorra ligera con tecnología de secado rápido.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 12,
+        "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw7340c737/products/NI_CQ4985-222/NI_CQ4985-222-1.JPG",
+        "titulo": "Gorra Nike Pro Futura",
+        "precio": 40000.00,
+        "descripcion": "Con un diseño elegante y moderno, ofrece confort y un estilo deportivo.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 13,
+        "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw41469126/products/NI_CI3315-657/NI_CI3315-657-1.JPG",
+        "titulo": "Gorra Nike Sportswear Pro Air",
+        "precio": 35000.00,
+        "descripcion": "Una estructura que mejora la ventilación, perfecta para el deporte y el estilo diario.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 14,
+        "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/iay6oq1gt45ldkqg245p21gppfi1/77e513bcd3762f47919c96f85e400038a39acdbb0d268f51c1fd98fe5327bd96",
+        "titulo": "Gorra adidas Originals Curved Trucker",
+        "precio": 48000.00,
+        "descripcion": "Con un diseño fresco y moderno, ideal para completar tu look casual con comodidad.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 15,
+        "imagen": "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwaa775dc9/products/AD_CF9627/AD_CF9627-2.JPG",
+        "titulo": "Gorra adidas R96",
+        "precio": 38500.00,
+        "descripcion": "Un modelo ligero con un ajuste perfecto, ideal para actividades al aire libre.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 16,
+        "imagen": "https://redsport.vtexassets.com/arquivos/ids/1185267-800-800?v=638567278984400000&width=800&height=800&aspect=true",
+        "titulo": "Gorra Adidas Tech 3P",
+        "precio": 39000.00,
+        "descripcion": "Gorra con un diseño moderno, perfecta para quienes buscan estilo y funcionalidad.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 17,
+        "imagen": "https://newera.com.ar/media/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/g/o/gorra-new-era-new-york-yankees-59fifty-citrus-pop-60288266_7_.jpg",
+        "titulo": "Gorra New Era New York Yankees",
+        "precio": 39500.00,
+        "descripcion": "Gorra con diseño clásico de la MLB, perfecta para fanáticos de los Yankees y para el día a día.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 18,
+        "imagen": "https://newera.com.ar/media/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/g/o/gorra-new-era-la-dodgers-mlb22-bp-59fifty-60228481-1.jpg",
+        "titulo": "Gorra New Era LA Dodgers 2023",
+        "precio": 42000.00,
+        "descripcion": "Diseño exclusivo con el logo de los Dodgers, ideal para los fanáticos del béisbol.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 19,
+        "imagen": "https://newera.com.ar/media/catalog/product/cache/0e2f5731caa1ee691ac892f7c71d27a7/g/o/gorra-new-era-chicago-bulls-black-base-snap-9forty-60222465-min.jpg",
+        "titulo": "Gorra New Era Chicago Bulls",
+        "precio": 35500.00,
+        "descripcion": "Un diseño único que evoca el espíritu deportivo de Chicago Bulls",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 20,
+        "imagen": "https://newera.com.ar/media/catalog/product/cache/06cfaa02c67cf3a5c3c05d775284c631/g/o/gorra-new-era-chicago-white-sox-mlb-koi-fish-9fifty-w3t000388-1.jpg",
+        "titulo": "Gorra New Era Chicago White Sox",
+        "precio": 41000.00,
+        "descripcion": "Diseño de calidad con detalles que representan el orgullo del equipo, ideal para fanáticos y coleccionistas.",
+        "categoria": "Gorras"
+    },
+    {
+        "id": 21,
+        "imagen": "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1372647_lifestyle?$rl_4x5_pdp$",
+        "titulo": "Polo Ralph Lauren London Classic Fit",
+        "precio": 181500.00,
+        "descripcion": "Polo con un ajuste clásico, ideal para un look casual y cómodo durante todo el día.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 22,
+        "imagen": "https://i.pinimg.com/736x/e8/93/06/e893061c409ccd4c887c8a8c1a0740f4.jpg",
+        "titulo": "Polo Ralph Lauren Mens Big Pony",
+        "precio": 172000.00,
+        "descripcion": "Con un diseño icónico, este polo refleja elegancia y distinción para cualquier ocasión.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 23,
+        "imagen": "https://i.pinimg.com/736x/83/cd/5d/83cd5d06394214f51562243be92eb091.jpg",
+        "titulo": "Polo Ralph Lauren B&W",
+        "precio": 162500.00,
+        "descripcion": "Un diseño clásico con colores básicos que combinan con todo, adecuado para diversos estilos.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 24,
+        "imagen": "https://i.pinimg.com/736x/95/0f/d3/950fd36f1569f2a546ca0ef4bf36428b.jpg",
+        "titulo": "Polo Ralph Lauren Panels",
+        "precio": 154000.00,
+        "descripcion": "Estilo moderno y urbano con detalles gráficos que destacan.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 25,
+        "imagen": "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1295275_lifestyle?$rl_4x5_pdp$",
+        "titulo": "Polo Ralph Lauren France",
+        "precio": 149000.00,
+        "descripcion": "Confección en algodón premium y diseño colorido ideal para un look fresco y elegante.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 26,
+        "imagen": "https://newsport.vtexassets.com/arquivos/ids/19497975-800-auto?v=638639847734770000&width=800&height=auto&aspect=true",
+        "titulo": "Chomba Lacoste Monograma Jacquard Slim Hombre",
+        "precio": 183000.00,
+        "descripcion": "Elegancia y comodidad con el clásico logo de cocodrilo en un diseño ajustado.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 27,
+        "imagen": "https://chelseaio.vtexassets.com/arquivos/ids/483525-800-auto?v=638466446870770000&width=800&height=auto&aspect=true",
+        "titulo": "Chomba Lacoste New Coco Slim Hombre",
+        "precio": 197000.00,
+        "descripcion": "El diseño icónico de Lacoste con un ajuste clásico y materiales de alta calidad.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 28,
+        "imagen": "https://dcdn.mitiendanube.com/stores/905/494/products/ewfefewfwe1-980dc2559799e2d91016778800717065-480-0.webp",
+        "titulo": "Chomba Lacoste Big Coco Slim Hombre",
+        "precio": 156000.00,
+        "descripcion": "Tecnología de secado rápido, ideal para actividades al aire libre.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 29,
+        "imagen": "https://acdn.mitiendanube.com/stores/001/150/632/products/dh731123ixu-ba18ad21c6dd83d09017217450922568-640-0.webp",
+        "titulo": "Chomba Tenis Lacoste Hombre Chemise Col Bord",
+        "precio": 152000.00,
+        "descripcion": "Diseño minimalista con el logo Lacoste bordado, perfecto para un look casual.",
+        "categoria": "Chombas"
+    },
+    {
+        "id": 30,
+        "imagen": "https://imagesa1.lacoste.com/dw/image/v2/BCWL_PRD/on/demandware.static/-/Sites-master/default/dwecdd7016/DH2945_7M4_24.jpg?imwidth=1920&impolicy=zoom",
+        "titulo": "Chomba Lacoste Classic Fit En Jacquard",
+        "precio": 152000.00,
+        "descripcion": "Diseño de patrones a color, perfecto para un look de fiesta.",
+        "categoria": "Chombas"
+    }
+]
