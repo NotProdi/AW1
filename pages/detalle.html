@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - Detalle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            padding: 2rem 0;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .card-body h2 {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Agencia de Viajes</a>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center">
+        <div class="container">
+            <h1>Detalles de tu destino</h1>
+        </div>
+    </header>
+
+    <!-- Contenedor principal para las tarjetas -->
+    <main class="container my-5">
+        <div class="row g-4">
+            <!-- Tarjeta de imagen de la ciudad -->
+            <div class="col-md-8">
+                <div class="card h-100">
+                    <img src="" class="card-img-top" id="city-image" alt="Ciudad">
+                </div>
+            </div>
+
+            <!-- Tarjeta de calculadora -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title" id="calculate-title">Calcula tu viaje a [Ciudad]</h5>
+                        <form id="price-form">
+                            <div class="mb-3">
+                                <label for="num-people" class="form-label">Número de personas</label>
+                                <input type="number" class="form-control" id="num-people" min="1" value="1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="num-nights" class="form-label">Número de noches</label>
+                                <input type="number" class="form-control" id="num-nights" min="1" value="1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="hotel" class="form-label">Selecciona un hotel</label>
+                                <select class="form-select" id="hotel">
+                                    <!-- Las opciones de hotel se insertarán aquí -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <h4>Total: $<span id="total-price">0</span></h4>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Confirmar selección</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta con la descripción del destino -->
+        <div class="row g-4 mt-5">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Descripción del destino</h5>
+                        <p id="city-description">Descripción del destino seleccionado...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Agencia de Viajes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module">
+        // Cargar los detalles de la ciudad seleccionada
+        const cityId = localStorage.getItem('selectedCityId');
+        const cityImage = document.getElementById('city-image');
+        const cityTitle = document.getElementById('calculate-title');
+        const cityDescription = document.getElementById('city-description');
+        const hotelSelect = document.getElementById('hotel');
+        const totalPriceElement = document.getElementById('total-price');
+        const priceForm = document.getElementById('price-form');
+
+        // Cargar datos del archivo JSON
+        fetch('../data/ciudades.json')
+            .then((response) => {
+                if (!response.ok) throw new Error('Error al cargar el archivo JSON');
+                return response.json();
+            })
+            .then((cities) => {
+                const city = cities.find(city => city.id == cityId);
+                if (city) {
+                    cityImage.src = city.img;
+                    cityTitle.textContent = `Calcula tu viaje a ${city.city}`;
+                    cityDescription.textContent = city.desc;
+
+                    // Rellenar las opciones de hoteles
+                    city.hotels.forEach(hotel => {
+                        const option = document.createElement('option');
+                        option.value = hotel.id;
+                        option.textContent = `${hotel.name} - $${hotel.price}`;
+                        hotelSelect.appendChild(option);
+                    });
+
+                    // Función para calcular el precio total
+                    const calculateTotalPrice = () => {
+                        const numPeople = parseInt(document.getElementById('num-people').value);
+                        const numNights = parseInt(document.getElementById('num-nights').value);
+                        const selectedHotelId = parseInt(hotelSelect.value);
+                        const selectedHotel = city.hotels.find(hotel => hotel.id === selectedHotelId);
+                        const hotelPrice = selectedHotel ? selectedHotel.price : 0;
+                        const basePrice = city.price;
+
+                        const totalPrice = basePrice + (hotelPrice * numPeople * numNights);
+                        totalPriceElement.textContent = totalPrice;
+                    };
+
+                    // Actualizar el total cada vez que el usuario cambie alguna opción
+                    priceForm.addEventListener('input', calculateTotalPrice);
+
+                    // Calcular el total al cargar la página
+                    calculateTotalPrice();
+
+                    // Evento para el formulario de confirmación
+                    priceForm.addEventListener('submit', (event) => {
+                        event.preventDefault();
+
+                        const numPeople = parseInt(document.getElementById('num-people').value);
+                        const numNights = parseInt(document.getElementById('num-nights').value);
+                        const selectedHotelId = parseInt(hotelSelect.value);
+                        const selectedHotel = city.hotels.find(hotel => hotel.id === selectedHotelId);
+                        const hotelPrice = selectedHotel ? selectedHotel.price : 0;
+                        const basePrice = city.price;
+
+                        // Calcular el precio total
+                        const totalPrice = basePrice + (hotelPrice * numPeople * numNights);
+
+                        // Guardar los datos en localStorage
+                        localStorage.setItem('selectedCityId', city.id);
+                        localStorage.setItem('numPeople', numPeople);
+                        localStorage.setItem('numNights', numNights);
+                        localStorage.setItem('selectedHotel', selectedHotel.name);
+                        localStorage.setItem('totalPrice', totalPrice);
+
+                        window.location.href = '../pages/resumen.html';
+                    });
+                } else {
+                    cityDescription.innerHTML = '<p class="text-center text-danger">Ciudad no encontrada.</p>';
+                }
+            })
+            .catch((error) => {
+                console.error('Error cargando las ciudades:', error);
+                cityDescription.innerHTML = '<p class="text-center text-danger">Ocurrió un error al cargar los detalles. Por favor, inténtelo más tarde.</p>';
+            });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

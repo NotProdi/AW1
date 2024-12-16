@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            padding: 2rem 0;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Agencia de Viajes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center">
+        <div class="container">
+            <h1>Bienvenido a nuestra Agencia de Viajes</h1>
+            <p>Elige tu próximo destino y vive una experiencia inolvidable</p>
+        </div>
+    </header>
+
+    <!-- Contenedor para las tarjetas -->
+    <main class="container my-5">
+        <div id="cities-container" class="row g-4 justify-content-center">
+            <!-- Las tarjetas se insertarán dinámicamente aquí -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Agencia de Viajes. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module">
+        import Card from '../scripts/components/card.js'; 
+
+        // Contenedor donde se renderizan las tarjetas
+        const container = document.getElementById('cities-container');
+
+        // Cargar datos del archivo JSON
+        fetch('../data/ciudades.json') 
+            .then((response) => {
+                if (!response.ok) throw new Error('Error al cargar el archivo JSON');
+                return response.json();
+            })
+            .then((cities) => {
+                if (cities.length === 0) {
+                    container.innerHTML = '<p class="text-center text-muted">No hay destinos disponibles en este momento.</p>';
+                    return;
+                }
+                cities.forEach(city => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-4'; 
+                    col.innerHTML = Card(city);
+                    container.appendChild(col);
+                });
+            })
+            .catch((error) => {
+                console.error('Error cargando las ciudades:', error);
+                container.innerHTML = '<p class="text-center text-danger">Ocurrió un error al cargar los destinos. Por favor, inténtelo más tarde.</p>';
+            });
+
+        // Evento para seleccionar una ciudad
+        document.addEventListener('click', (event) => {
+            if (event.target && event.target.classList.contains('btn-select-city')) {
+                const cityId = event.target.getAttribute('data-id');
+                localStorage.setItem('selectedCityId', cityId); // Guardar en localStorage
+                window.location.href = 'detalle.html'; // Redirigir a la página de detalle
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - Resumen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            padding: 2rem 0;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .card-body h2 {
+            font-size: 1.5rem;
+        }
+        .form-control {
+            margin-bottom: 1rem;
+        }
+        .form-section {
+            margin-top: 2rem;
+        }
+        .btn-cancel {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Agencia de Viajes</a>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center">
+        <div class="container">
+            <h1>Resumen de tu viaje</h1>
+        </div>
+    </header>
+
+    <!-- Contenedor principal para la tarjeta -->
+    <main class="container my-5">
+        <div class="row">
+            <!-- Tarjeta con la información del destino y los datos de facturación -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="row g-0">
+                        <!-- Columna izquierda con los datos del destino -->
+                        <div class="col-md-6">
+                            <img src="" class="img-fluid" id="destination-image" alt="Destino">
+                        </div>
+                        <!-- Columna derecha con el resumen del viaje -->
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h2 id="destination-title">Viaje a [Ciudad]</h2>
+                                <p id="destination-description">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario con la información personal del usuario -->
+        <div class="row form-section">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Ingresa tu información</h3>
+                        <form id="user-info-form">
+                            <div class="mb-3">
+                                <label for="first-name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="first-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last-name" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="last-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <button type="button" class="btn btn-cancel" onclick="cancelBooking();">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Viajar!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Agencia de Viajes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module">
+        // Cargar los datos del localStorage
+        const cityId = localStorage.getItem('selectedCityId');
+        const numPeople = localStorage.getItem('numPeople');
+        const numNights = localStorage.getItem('numNights');
+        const selectedHotel = localStorage.getItem('selectedHotel');
+        const totalPrice = localStorage.getItem('totalPrice');
+
+        const destinationTitle = document.getElementById('destination-title');
+        const destinationImage = document.getElementById('destination-image');
+        const destinationDescription = document.getElementById('destination-description');
+
+        fetch('../data/ciudades.json')
+            .then((response) => {
+                if (!response.ok) throw new Error('Error al cargar el archivo JSON');
+                return response.json();
+            })
+            .then((cities) => {
+                const city = cities.find(city => city.id == cityId);
+                if (city) {
+                    // Establecer la información del destino
+                    destinationTitle.textContent = `Viaje a ${city.city}`;
+                    destinationImage.src = city.img;
+                    destinationDescription.innerHTML = ` 
+                        <p><strong>Hotel:</strong> ${selectedHotel}</p>
+                        <p><strong>Número de personas:</strong> ${numPeople}</p>
+                        <p><strong>Número de noches:</strong> ${numNights}</p>
+                        <p><strong>Total:</strong> $${totalPrice}</p>
+                    `;
+                } else {
+                    destinationDescription.innerHTML = '<p class="text-center text-danger">Ciudad no encontrada.</p>';
+                }
+            })
+            .catch((error) => {
+                console.error('Error cargando las ciudades:', error);
+                destinationDescription.innerHTML = '<p class="text-center text-danger">Ocurrió un error al cargar los detalles. Por favor, inténtelo más tarde.</p>';
+            });
+
+        function cancelBooking() {
+            if (confirm("¿Estás seguro de que quieres cancelar la reserva?")) {
+            localStorage.clear();
+            window.location.href = '../pages/home.html';
+            }
+        }
+
+        // Función para manejar el envío del formulario "Viajar!"
+        const userInfoForm = document.getElementById('user-info-form');
+        userInfoForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+
+            // Eliminar los campos de la tarjeta
+            document.getElementById('first-name').value = '';
+            document.getElementById('last-name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+
+            // Opcionalmente, podrías guardar la información en el localStorage para futuras referencias o para procesar el pedido
+            alert('¡Gracias por tu reserva! Estamos procesando tu solicitud.');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
